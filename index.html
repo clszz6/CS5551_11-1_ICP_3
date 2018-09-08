@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FoodApplication">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="application/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+    <title>Yummy Nutrition</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="./food.js"></script>
+
+    <style type="text/css">
+        body {
+           background-color: #cfebfd; 
+        }
+
+        .food-display {
+            background: #ececec;
+            width: 200px;
+            padding: 1.5em;
+            margin-left: 20px;
+            border: 1px black solid;
+            border-radius: 5px;
+            display: table;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .food-form {
+            display: table;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body ng-app="FoodApplication" ng-controller="FoodController">
+    <div class="jumbotron">
+        <h1 class="text-center">Yummy Nutrition</h1>          
+    </div>
+    <div class="food-form">
+        <div class="form-group col-lg-7">
+            <input class="form-control" placeholder="Food" ng-model="food" />
+        </div>
+        <input class="btn btn-primary" type="submit" ng-click="submition(food)" value="View Nutrition" />
+    </div>
+    <br/><br/>
+    <div id="foodDisplay">
+        <p ng-bind-html="nutrition.html"></p>
+    </div>
+</body>
+</html>
